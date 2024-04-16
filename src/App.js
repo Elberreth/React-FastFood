@@ -1,19 +1,18 @@
 import React, { useState } from 'react';
-import Menu from './Menu'; // Component to display menu items
-import Order from './Order'; // Component to display order list
-import ThemeToggle from './ThemeToggle'; // Component to toggle dark/light theme
+import MenuItem from './MenuItem'; 
+import OrderList from './OrderList'; 
+import ThemeToggle from './ThemeToggle'; 
+import Menu from './Menu';
 
 function App() {
-  const [menuItems, setMenuItems] = useState([]); // State to store menu items
-  const [orderItems, setOrderItems] = useState([]); // State to store order items
-  const [theme, setTheme] = useState('light'); // State to store current theme
+  const [menuItems, setMenuItems] = useState([]); 
+  const [orderItems, setOrderItems] = useState([]); 
+  const [theme, setTheme] = useState('light'); 
 
-  // Function to add item to order
   const addToOrder = (item) => {
     setOrderItems([...orderItems, item]);
   };
 
-  // Function to toggle theme
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
@@ -24,10 +23,18 @@ function App() {
       <h1>Fast Food Ordering App</h1>
       <div className="container">
         <Menu menuItems={menuItems} addToOrder={addToOrder} />
-        <Order orderItems={orderItems} />
+        <div className="menu">
+          <h2>Menu</h2>
+          {menuItems.map((item, index) => (
+            <MenuItem key={index} item={item} addToOrder={addToOrder} />
+          ))}
+        </div>
+        <OrderList orderItems={orderItems} />
       </div>
     </div>
   );
 }
 
 export default App;
+
+
