@@ -3,7 +3,7 @@ import MenuItem from './MenuItem';
 import OrderList from './OrderList';
 import ThemeToggle from './ThemeToggle';
 import Menu from './Menu';
-import './menu.css'; // Import CSS file for general styling
+import './menu.css'; 
 
 function App() {
   const [menuItems, setMenuItems] = useState([
@@ -15,7 +15,16 @@ function App() {
   const [theme, setTheme] = useState('light');
 
   const addToOrder = (item) => {
-    setOrderItems([...orderItems, { ...item, quantity: 1 }]);
+    const index = orderItems.findIndex((orderItem) => orderItem.name === item.name);
+    if (index !== -1) {
+      // Item already exists in order, update its quantity
+      const updatedOrder = [...orderItems];
+      updatedOrder[index].quantity += 1;
+      setOrderItems(updatedOrder);
+    } else {
+      // Item doesn't exist in order, add it with quantity 1
+      setOrderItems([...orderItems, { ...item, quantity: 1 }]);
+    }
   };
 
   const removeFromOrder = (index) => {
