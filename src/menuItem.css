@@ -1,0 +1,39 @@
+.menu-item-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 300px; /* Adjust the width as needed */
+  }
+  
+  .menu-item-image {
+    width: 100px; /* Adjust the width of the image as needed */
+    height: 100px; /* Adjust the height of the image as needed */
+    margin-right: 20px;
+  }
+  
+  .menu-item-details {
+    flex-grow: 1;
+  }
+  
+  .menu-item-quantity {
+    width: 50px; /* Adjust the width of the quantity input field as needed */
+  }
+  
+  .menu-item-button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-item-button:hover {
+    background-color: #0056b3;
+  }
+  
+
+  

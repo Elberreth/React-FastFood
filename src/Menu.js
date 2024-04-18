@@ -13,3 +13,4 @@ const Menu = ({ menuItems, addToOrder }) => {
 
 export default Menu;
 
+

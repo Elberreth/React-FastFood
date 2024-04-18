@@ -4,7 +4,6 @@ import OrderList from './OrderList';
 import ThemeToggle from './ThemeToggle';
 import Menu from './Menu';
 import './menu.css'; 
-import addToOrder from './addToOrder';
 
 function App() {
   const [menuItems, setMenuItems] = useState([
@@ -15,17 +14,22 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   const [theme, setTheme] = useState('light');
 
-  const addToOrder = (item) => {
-    const index = orderItems.findIndex((orderItem) => orderItem.name === item.name);
-    if (index !== -1) {
-      
-      const updatedOrder = [...orderItems];
-      updatedOrder[index].quantity += 1;
-      setOrderItems(updatedOrder);
-    } else {
-      
-      setOrderItems([...orderItems, { ...item, quantity: 1 }]);
-    }
+  const addToOrder = (itemsToAdd) => {
+    setOrderItems((prevOrderItems) => {
+      let updatedOrderItems = [...prevOrderItems];
+
+      itemsToAdd.forEach((item) => {
+        const existingItemIndex = updatedOrderItems.findIndex((orderItem) => orderItem.name === item.name);
+
+        if (existingItemIndex !== -1) {
+          updatedOrderItems[existingItemIndex].quantity += 1;
+        } else {
+          updatedOrderItems.push({ ...item, quantity: 1 });
+        }
+      });
+
+      return updatedOrderItems;
+    });
   };
 
   const removeFromOrder = (index) => {
