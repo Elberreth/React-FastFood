@@ -1,38 +1,37 @@
-
-
 .menu-container {
-    display: flex; 
-    flex-wrap: wrap; 
-    justify-content: space-between; 
-    align-items: center; 
-    padding: 20px; 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start; /* Align items at the top */
+    padding: 20px;
   }
   
   .menu-item {
     width: calc(33.33% - 20px);
-    margin: 10px; 
-    box-sizing: border-box; 
-    padding: 20px; 
-    border: 1px solid #ccc; 
-    border-radius: 5px; 
-    text-align: center; 
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
   }
   
   .menu-item img {
-    width: 100%; 
-    height: auto; 
+    width: 100%; /* Allow the width to adjust proportionally */
+    height: 150px; /* Set a fixed height for the images */
+    object-fit: cover; /* Ensure the image covers the entire container */
   }
   
   .menu-item h3 {
-    margin-top: 0; 
+    margin-top: 0;
   }
   
   .menu-item p {
-    margin-bottom: 10px; 
+    margin-bottom: 10px;
   }
   
   .menu-item button {
-    background-color: #4CAF50; 
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -41,19 +40,21 @@
   }
   
   .menu-item button:hover {
-    background-color: #45a049; 
+    background-color: #45a049;
   }
+  
   .App {
-    background-color: #ccc; 
-    color: black; 
+    background-color: #ccc;
+    color: black;
   }
   
   .light {
-    background-color: white; 
-    color: black; 
+    background-color: white;
+    color: black;
   }
   
   .dark {
-    background-color: #333; 
-    color: white; 
+    background-color: #333;
+    color: white;
   }
+  
