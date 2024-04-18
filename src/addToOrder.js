@@ -1,16 +1,18 @@
-const addToOrder = (item, orderItems, setOrderItems) => {
+const addToOrder = (item, quantity, orderItems, setOrderItems) => {
     const index = orderItems.findIndex((orderItem) => orderItem.name === item.name);
     if (index !== -1) {
-     
+      // Item already exists in order, update its quantity
       const updatedOrder = [...orderItems];
-      updatedOrder[index].quantity += 1;
+      updatedOrder[index].quantity += quantity;
       setOrderItems(updatedOrder);
     } else {
-      
-      setOrderItems([...orderItems, { ...item, quantity: 1 }]);
+      // Item doesn't exist in order, add it with the specified quantity
+      setOrderItems([...orderItems, { ...item, quantity }]);
     }
   };
   
   export default addToOrder;
+  
+  
   
   
