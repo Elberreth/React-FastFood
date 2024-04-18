@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import MenuItem from './MenuItem';
+
 import OrderList from './OrderList';
 import ThemeToggle from './ThemeToggle';
 import Menu from './Menu';

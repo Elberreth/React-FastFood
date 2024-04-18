@@ -5,15 +5,15 @@ const MenuItem = ({ item, addToOrder }) => {
 
   const handleQuantityChange = (e) => {
     const newQuantity = parseInt(e.target.value);
-    setQuantity(newQuantity > 0 ? newQuantity : 1); // Ensure quantity is at least 1
+    setQuantity(newQuantity > 0 ? newQuantity : 1); 
   };
 
   const handleClick = () => {
-    // Create an array with the selected quantity of the item
+    
     const itemsToAdd = Array.from({ length: quantity }, () => item);
-    // Add the items to the order
+    
     addToOrder(itemsToAdd);
-    // Reset quantity after adding to order
+    
     setQuantity(1);
   };
 

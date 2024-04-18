@@ -1,12 +1,12 @@
 import React from 'react';
 
 const OrderList = ({ orderItems, removeFromOrder }) => {
-  // Function to calculate the total price for each order group
+  
   const calculateOrderTotalPrice = (items) => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
-  // Function to group order items by their name
+  
   const groupOrderItemsByName = (items) => {
     const groupedItems = {};
     items.forEach((item) => {
@@ -19,7 +19,7 @@ const OrderList = ({ orderItems, removeFromOrder }) => {
     return groupedItems;
   };
 
-  // Group order items by name
+ 
   const groupedOrderItems = groupOrderItemsByName(orderItems);
 
   return (
@@ -31,7 +31,7 @@ const OrderList = ({ orderItems, removeFromOrder }) => {
           {groupedOrderItems[itemName].map((item, itemIndex) => (
             <div key={itemIndex}>
               <p>Quantity: {item.quantity}</p>
-              <p>Price per item: ${item.price ? item.price.toFixed(2) : 'N/A'}</p> {/* Null check for price */}
+              <p>Price per item: ${item.price ? item.price.toFixed(2) : 'N/A'}</p> 
               <button onClick={() => removeFromOrder(orderItems.indexOf(item))}>Remove</button>
             </div>
           ))}
