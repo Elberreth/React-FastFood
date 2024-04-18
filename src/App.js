@@ -3,6 +3,7 @@ import MenuItem from './MenuItem';
 import OrderList from './OrderList'; 
 import ThemeToggle from './ThemeToggle'; 
 import Menu from './Menu';
+import './menu.css'; 
 
 function App() {
   const [menuItems, setMenuItems] = useState([

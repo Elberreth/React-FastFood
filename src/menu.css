@@ -1,0 +1,46 @@
+/* styles.css */
+
+.menu-container {
+    display: flex; /* Display items in a row */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if needed */
+    justify-content: space-between; /* Distribute items evenly along the main axis */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add padding to the container */
+  }
+  
+  .menu-item {
+    width: calc(33.33% - 20px); /* Set the width of each item to one-third of the container width with margin */
+    margin: 10px; /* Add space around each item */
+    box-sizing: border-box; /* Include padding and border in the item's total width */
+    padding: 20px; /* Add padding to each item */
+    border: 1px solid #ccc; /* Add a border around each item */
+    border-radius: 5px; /* Add rounded corners to each item */
+    text-align: center; /* Center the text horizontally */
+  }
+  
+  .menu-item img {
+    width: 100%; /* Ensure images fill the container */
+    height: auto; /* Maintain the aspect ratio of the images */
+  }
+  
+  .menu-item h3 {
+    margin-top: 0; /* Remove top margin from heading */
+  }
+  
+  .menu-item p {
+    margin-bottom: 10px; /* Add some space below the description */
+  }
+  
+  .menu-item button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .menu-item button:hover {
+    background-color: #45a049; /* Darker green */
+  }
+  

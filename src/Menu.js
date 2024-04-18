@@ -3,8 +3,7 @@ import MenuItem from './MenuItem';
 
 const Menu = ({ menuItems, addToOrder }) => {
   return (
-    <div>
-      <h2>Menu</h2>
+    <div className="menu-container">
       {menuItems.map((item, index) => (
         <MenuItem key={index} item={item} addToOrder={addToOrder} />
       ))}
