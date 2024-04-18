@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import MenuItem from './MenuItem';
 import OrderList from './OrderList';
 import ThemeToggle from './ThemeToggle';
 import Menu from './Menu';
@@ -14,22 +14,8 @@ function App() {
   const [orderItems, setOrderItems] = useState([]);
   const [theme, setTheme] = useState('light');
 
-  const addToOrder = (itemsToAdd) => {
-    setOrderItems((prevOrderItems) => {
-      let updatedOrderItems = [...prevOrderItems];
-
-      itemsToAdd.forEach((item) => {
-        const existingItemIndex = updatedOrderItems.findIndex((orderItem) => orderItem.name === item.name);
-
-        if (existingItemIndex !== -1) {
-          updatedOrderItems[existingItemIndex].quantity += 1;
-        } else {
-          updatedOrderItems.push({ ...item, quantity: 1 });
-        }
-      });
-
-      return updatedOrderItems;
-    });
+  const addToOrder = (item) => {
+    setOrderItems([...orderItems, { ...item, quantity: 1 }]);
   };
 
   const removeFromOrder = (index) => {
@@ -42,6 +28,11 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
+  // Function to calculate the total price of all orders
+  const calculateTotalPrice = () => {
+    return orderItems.reduce((total, item) => total + (item.price * item.quantity), 0);
+  };
+
   return (
     <div className={`App ${theme}`}>
       <ThemeToggle toggleTheme={toggleTheme} />
@@ -50,11 +41,16 @@ function App() {
         <Menu menuItems={menuItems} addToOrder={addToOrder} />
         <OrderList orderItems={orderItems} removeFromOrder={removeFromOrder} />
       </div>
+      <div>Total Price: ${calculateTotalPrice().toFixed(2)}</div> {/* Display total price */}
     </div>
   );
 }
 
 export default App;
+
+
+
+
 
 
 
