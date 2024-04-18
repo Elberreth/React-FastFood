@@ -6,9 +6,9 @@ import Menu from './Menu';
 
 function App() {
   const [menuItems, setMenuItems] = useState([
-    { name: 'Classic Burger', description: 'Juicy beef patty with lettuce, tomato, onion, and pickles', price: 8.99 },
-    { name: 'Cheeseburger', description: 'Classic burger with melted cheese', price: 9.99 },
-    { name: 'Bacon Burger', description: 'Delicious burger topped with crispy bacon', price: 10.99 }
+    { name: 'Classic Burger', description: 'Juicy beef patty with lettuce, tomato, onion, and pickles', price: 8.99, imageUrl: 'images/classicburger.jpg' },
+    { name: 'Cheeseburger', description: 'Classic burger with melted cheese', price: 9.99, imageUrl: 'images/cheeseburger.jpg' },
+    { name: 'Bacon Burger', description: 'Delicious burger topped with crispy bacon', price: 10.99, imageUrl: 'images/baconburger.jpg' }
   ]); 
   const [orderItems, setOrderItems] = useState([]); 
   const [theme, setTheme] = useState('light'); 
