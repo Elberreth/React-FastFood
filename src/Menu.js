@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from './MenuItem'; 
+import MenuItem from './MenuItem';
 
 const Menu = ({ menuItems, addToOrder }) => {
   return (
@@ -12,3 +12,4 @@ const Menu = ({ menuItems, addToOrder }) => {
 };
 
 export default Menu;
+

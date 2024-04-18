@@ -4,6 +4,7 @@ import OrderList from './OrderList';
 import ThemeToggle from './ThemeToggle';
 import Menu from './Menu';
 import './menu.css'; 
+import addToOrder from './addToOrder';
 
 function App() {
   const [menuItems, setMenuItems] = useState([
