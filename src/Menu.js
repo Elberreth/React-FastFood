@@ -1,5 +1,5 @@
 import React from 'react';
-import MenuItem from './MenuItem'; // Importing the MenuItem component
+import MenuItem from './MenuItem'; 
 
 const Menu = ({ menuItems, addToOrder }) => {
   return (

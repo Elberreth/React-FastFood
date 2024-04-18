@@ -1,14 +1,18 @@
-// OrderList.js
 import React from 'react';
 
-const OrderList = ({ orderItems }) => {
+const OrderList = ({ orderItems, removeFromOrder }) => {
+  const handleRemove = (index) => {
+    removeFromOrder(index);
+  };
+
   return (
     <div>
-      <h2>Order List</h2>
+      <h2>Order</h2>
       <ul>
         {orderItems.map((item, index) => (
           <li key={index}>
-            {item.name} - Quantity: {item.quantity} - Total Price: ${item.price * item.quantity}
+            {item.name} - Quantity: {item.quantity} - ${item.price * item.quantity}
+            <button onClick={() => handleRemove(index)}>Remove</button>
           </li>
         ))}
       </ul>
@@ -17,3 +21,4 @@ const OrderList = ({ orderItems }) => {
 };
 
 export default OrderList;
+
