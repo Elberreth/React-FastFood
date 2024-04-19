@@ -6,7 +6,6 @@ const OrderList = ({ orderItems, removeFromOrder }) => {
     return items.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
 
-  
   const groupOrderItemsByName = (items) => {
     const groupedItems = {};
     items.forEach((item) => {
@@ -19,7 +18,6 @@ const OrderList = ({ orderItems, removeFromOrder }) => {
     return groupedItems;
   };
 
- 
   const groupedOrderItems = groupOrderItemsByName(orderItems);
 
   return (
@@ -43,5 +41,6 @@ const OrderList = ({ orderItems, removeFromOrder }) => {
 };
 
 export default OrderList;
+
 
 

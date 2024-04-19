@@ -28,7 +28,6 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
- 
   const calculateTotalPrice = () => {
     return orderItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
@@ -47,6 +46,8 @@ function App() {
 }
 
 export default App;
+
+
 
 
 
