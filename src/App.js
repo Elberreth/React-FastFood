@@ -28,7 +28,7 @@ function App() {
     setTheme(theme === 'light' ? 'dark' : 'light');
   };
 
-  // Function to calculate the total price of all orders
+ 
   const calculateTotalPrice = () => {
     return orderItems.reduce((total, item) => total + (item.price * item.quantity), 0);
   };
@@ -41,7 +41,7 @@ function App() {
         <Menu menuItems={menuItems} addToOrder={addToOrder} />
         <OrderList orderItems={orderItems} removeFromOrder={removeFromOrder} />
       </div>
-      <div>Total Price: ${calculateTotalPrice().toFixed(2)}</div> {/* Display total price */}
+      <div>Total Price: ${calculateTotalPrice().toFixed(2)}</div> 
     </div>
   );
 }
