@@ -1,30 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 const MenuItem = ({ item, addToOrder }) => {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleChange = (event) => {
-    setQuantity(parseInt(event.target.value));
-  };
-
-  const handleClick = () => {
-    const itemsToAdd = Array.from({ length: quantity }, () => item); // Create an array of items with the selected quantity
-    addToOrder(itemsToAdd);
-    setQuantity(1); // Reset quantity to 1 after adding items to the order
-  };
+  const { name, description, price, imageUrl } = item;
 
   return (
     <div className="menu-item">
-      <img src={item.imageUrl} alt={item.name} />
-      <h3>{item.name}</h3>
-      <p>{item.description}</p>
-      <input type="number" min="1" value={quantity} onChange={handleChange} />
-      <button onClick={handleClick}>Order</button>
+      <img src={imageUrl} alt={name} />
+      <h3>{name}</h3>
+      <p>{description}</p>
+      <p>Price: ${price.toFixed(2)}</p> 
+      <button onClick={() => addToOrder(item)}>Add to Order</button>
     </div>
   );
 };
 
 export default MenuItem;
+
 
 
 
